@@ -67,6 +67,11 @@
   }
 }
 
+.video-holder
+{
+  margin: 0 auto 50px auto;
+}
+
 /**
 * Template Name: NewBiz - v2.0.0
 * Template URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
@@ -442,27 +447,117 @@ h1, h2, h3, h4, h5, h6 {
 #intro {
   width: 100%;
   position: relative;
-  background: url(../img/main.png) center bottom no-repeat;
-  background-position: -220px 30px;
-  background-size: 120% auto;
-  padding: 170px 0 120px 0;
-  min-height: 700px;
+  background:#f7ffff url(../img/basemap2.gif) no-repeat;
+  background-position: 100% 100%;
+  background-size: 70% auto;
+  padding: 170px 0 20px 0;
+  min-height: 650px;
 }
 
-@media only screen and (min-width:1300px)
+@media only screen and (max-width:1085px)
 {
   #intro {
     width: 100%;
     position: relative;
-    background: url(../img/main.png) center bottom no-repeat;
-    background-position: -30px 30px;
-    background-size: 90% auto;
+    background:#f7ffff url(../img/basemap2.gif) no-repeat;
+    background-position: 100% 100%;
+    background-size: 100% auto;
     padding: 170px 0 120px 0;
-    min-height: auto;
+    min-height: 900px;
   }
 }
 
-@media (max-width: 1085px) {
+@media only screen and (max-width:950px)
+{
+  #intro {
+    width: 100%;
+    position: relative;
+    background:#f7ffff url(../img/basemap2.gif) no-repeat;
+    background-position: 100% 100%;
+    background-size: 100% auto;
+    padding: 170px 0 120px 0;
+    min-height: 900px;
+  }
+}
+
+@media only screen and (max-width:850px)
+{
+  #intro {
+    width: 100%;
+    position: relative;
+    background:#f7ffff url(../img/basemap2.gif) no-repeat;
+    background-position: 100% 100%;
+    background-size: 100% auto;
+    padding: 170px 0 120px 0;
+    min-height: 850px;
+  }
+}
+
+@media only screen and (max-width:750px)
+{
+  #intro {
+    width: 100%;
+    position: relative;
+    background:#f7ffff url(../img/basemap2.gif) no-repeat;
+    background-position: 100% 100%;
+    background-size: 100% auto;
+    padding: 170px 0 120px 0;
+    min-height: 750px;
+  }
+}
+
+@media only screen and (max-width:650px)
+{
+  #intro {
+    width: 100%;
+    position: relative;
+    background:#f7ffff url(../img/basemap2.gif) no-repeat;
+    background-position: 100% 100%;
+    background-size: 100% auto;
+    padding: 170px 0 120px 0;
+    min-height: 680px;
+  }
+}
+
+/* @media only screen and (max-width:550px)
+{
+  #intro {
+    width: 100%;
+    position: relative;
+    background: url(../img/basemap2.gif) no-repeat;
+    background-position: 100% 100%;
+    background-size: 100% auto;
+    padding: 170px 0 120px 0;
+    min-height: 680px;
+  }
+}
+
+@media only screen and (max-width:450px)
+{
+  #intro {
+    width: 100%;
+    position: relative;
+    background: url(../img/basemap2.gif) no-repeat;
+    background-position: 100% 100%;
+    background-size: 100% auto;
+    padding: 170px 0 120px 0;
+    min-height: 800px%;
+  }
+}
+
+@media only screen and (max-width:350px)
+{
+  #intro {
+    width: 100%;
+    position: relative;
+    background: url(../img/basemap2.gif) no-repeat;
+    background-position: 100% 100%;
+    background-size: 100% auto;
+    padding: 170px 0 120px 0;
+    min-height: 800px%;
+  }
+} */
+/* @media (max-width: 1085px) {
   #intro {
     padding: 140px 0 60px 0;
     background: white;
@@ -474,7 +569,7 @@ h1, h2, h3, h4, h5, h6 {
   #intro {
     padding: 100px 0 20px 0;
   }
-}
+} */
 
 #intro .intro-img {
   width: 50%;
