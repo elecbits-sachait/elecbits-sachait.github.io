@@ -70,6 +70,18 @@
 .video-holder
 {
   margin: 0 auto 50px auto;
+  width: 45%;
+  height: auto;
+}
+
+@media (max-width:800px)
+{
+  .video-holder
+{
+  margin: 0 auto 50px auto;
+  width: 80%;
+  height: auto;
+}
 }
 
 /**
