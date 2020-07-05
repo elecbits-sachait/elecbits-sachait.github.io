@@ -6,33 +6,31 @@
 
 #swadeshi{
   padding: 70px 0 70px 0;
-  background: url(../img/Image\ 9.svg), url(../img/map-india@2x_edited.jpg);
+  background: url(../img/chakra.svg),url(../img/Image\ 9.svg) ;
   background-repeat: no-repeat, no-repeat;
-  background-size: 100% 100%, auto 100%;
-  background-position:0% 0%, 85% 0%;
+  background-size: auto 70%, 100% 100%;
+  background-position:70% 50%, 0% 0%;
 }
 
-@media only screen and (max-width:1050px)
+@media only screen and (max-width:1200px)
 {
-  #swadeshi
-  {
+  #swadeshi{
     padding: 70px 0 70px 0;
-    background: url(../img/Image\ 9.svg), url(../img/map-india@2x_edited.jpg);
+    background: url(../img/chakra.svg),url(../img/Image\ 9.svg) ;
     background-repeat: no-repeat, no-repeat;
-    background-size: 100% 100%, auto 100%;
-    background-position:0% 0%, 100% 0%;
+    background-size: auto 60%, 100% 100%;
+    background-position:85% 50%, 0% 0%;
   }
 }
 
-@media only screen and (max-width:500px)
+@media only screen and (max-width:770px)
 {
-  #swadeshi
-  {
+  #swadeshi{
     padding: 70px 0 70px 0;
-    background: url(../img/Image\ 9.svg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position:0% 0%;
+    background:url(../img/Image\ 9.svg), url(../img/chakra.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100% 100%, 50% auto;
+    background-position:0% 0%,50% 50%;
   }
 }
 
