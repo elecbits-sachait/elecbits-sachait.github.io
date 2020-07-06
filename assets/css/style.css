@@ -9,7 +9,7 @@
   background: url(../img/chakra.svg),url(../img/Image\ 9.svg) ;
   background-repeat: no-repeat, no-repeat;
   background-size: auto 70%, 100% 100%;
-  background-position:70% 50%, 0% 0%;
+  background-position:90% 50%, 0% 0%;
 }
 
 @media only screen and (max-width:1200px)
@@ -19,7 +19,7 @@
     background: url(../img/chakra.svg),url(../img/Image\ 9.svg) ;
     background-repeat: no-repeat, no-repeat;
     background-size: auto 60%, 100% 100%;
-    background-position:85% 50%, 0% 0%;
+    background-position:90% 50%, 0% 0%;
   }
 }
 
@@ -27,10 +27,10 @@
 {
   #swadeshi{
     padding: 70px 0 70px 0;
-    background:url(../img/Image\ 9.svg), url(../img/chakra.svg);
-    background-repeat: no-repeat, no-repeat;
-    background-size: 100% 100%, 50% auto;
-    background-position:0% 0%,50% 50%;
+    background:url(../img/Image\ 9.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position:0% 0%;
   }
 }
 
@@ -70,35 +70,37 @@
   margin: 0 auto 0 auto;
   width: 60%;
   height: auto;
+  border-radius: 10px;
 }
 
 @media (max-width:800px)
 {
   .video-holder
 {
-  margin: 0 auto 50px auto;
+  margin: 0 auto 0 auto;
   width: 80%;
   height: auto;
+  border-radius: 10px;
 }
 }
 
 .preorder-btn
 {
-  background: #00428c;
+  background: #2375bc;
   color: white;
-  border-radius: 13px;
+  border-radius: 6px;
 
 }
 .preorder-btn:hover
 {
   background: #2352C2;
   color: white;
-  border-radius: 13px;
+  border-radius: 6px;
 }
 
 #video
 {
-  margin: 30px auto 0 auto;
+  margin: 0 auto 60px auto;
 }
 
 /**
@@ -294,7 +296,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   position: relative;
   color: black;
-  padding: 10px 15px;
+  padding: 6px 15px;
   transition: 0.3s;
   font-size: 15px;
   font-family: 'Ubuntu', sans-serif;
@@ -473,14 +475,23 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Intro Section
 --------------------------------------------------------------*/
+html
+{
+  height: 100%;
+}
+
+body
+{
+  height: 100%;
+}
 #intro {
   width: 100%;
+  height: 100%;
   position: relative;
-  background:#f7ffff url(../img/basemap2.gif) no-repeat;
-  background-position: 100% 100%;
-  background-size: 70% auto;
-  padding: 170px 0 20px 0;
-  min-height: 470px;
+  background:#f7ffff url(../img/basemap-3.gif) no-repeat;
+  background-position: 450px 100%;
+  background-size: 80% auto;
+  padding: 16% 0 20px 0;
 }
 
 @media (max-width:1250px)
@@ -488,10 +499,10 @@ h1, h2, h3, h4, h5, h6 {
   #intro {
     width: 100%;
     position: relative;
-    background:#f7ffff url(../img/basemap2.gif) no-repeat;
-    background-position: 100% 100%;
+    background:#f7ffff url(../img/basemap-3.gif) no-repeat;
+    background-position: 350px 100%;
     background-size: 75% auto;
-    padding: 170px 0 20px 0;
+    padding: 19% 0 20px 0;
     min-height: 470px;
   }
 }
@@ -501,10 +512,10 @@ h1, h2, h3, h4, h5, h6 {
   #intro {
     width: 100%;
     position: relative;
-    background:#f7ffff url(../img/basemap2.gif) no-repeat;
-    background-position: 100% 100%;
+    background:#f7ffff url(../img/basemap-3.gif) no-repeat;
+    background-position: 300px 100%;
     background-size: 85% auto;
-    padding: 170px 0 20px 0;
+    padding: 21% 0 20px 0;
     min-height: 470px;
   }
 }
@@ -514,7 +525,7 @@ h1, h2, h3, h4, h5, h6 {
   #intro {
     width: 100%;
     position: relative;
-    background:#f7ffff url(../img/basemap2.gif) no-repeat;
+    background:#f7ffff url(../img/basemap-3.gif) no-repeat;
     background-position: 100% 100%;
     background-size: 100% auto;
     padding: 170px 0 120px 0;
@@ -527,10 +538,10 @@ h1, h2, h3, h4, h5, h6 {
   #intro {
     width: 100%;
     position: relative;
-    background:#f7ffff url(../img/basemap2.gif) no-repeat;
+    background:#f7ffff url(../img/basemap-3.gif) no-repeat;
     background-position: 100% 100%;
     background-size: 100% auto;
-    padding: 170px 0 120px 0;
+    padding: 100px 0 120px 0;
     min-height: 900px;
   }
 }
@@ -540,10 +551,10 @@ h1, h2, h3, h4, h5, h6 {
   #intro {
     width: 100%;
     position: relative;
-    background:#f7ffff url(../img/basemap2.gif) no-repeat;
+    background:#f7ffff url(../img/basemap-3.gif) no-repeat;
     background-position: 100% 100%;
     background-size: 100% auto;
-    padding: 170px 0 120px 0;
+    padding: 100px 0 120px 0;
     min-height: 850px;
   }
 }
@@ -553,10 +564,10 @@ h1, h2, h3, h4, h5, h6 {
   #intro {
     width: 100%;
     position: relative;
-    background:#f7ffff url(../img/basemap2.gif) no-repeat;
+    background:#f7ffff url(../img/basemap-3.gif) no-repeat;
     background-position: 100% 100%;
     background-size: 100% auto;
-    padding: 170px 0 120px 0;
+    padding: 150px 0 120px 0;
     min-height: 750px;
   }
 }
@@ -566,10 +577,10 @@ h1, h2, h3, h4, h5, h6 {
   #intro {
     width: 100%;
     position: relative;
-    background:#f7ffff url(../img/basemap2.gif) no-repeat;
+    background:#f7ffff url(../img/basemap-3.gif) no-repeat;
     background-position: 100% 100%;
     background-size: 100% auto;
-    padding: 170px 0 120px 0;
+    padding: 150px 0 120px 0;
     min-height: 680px;
   }
 }
@@ -579,7 +590,7 @@ h1, h2, h3, h4, h5, h6 {
   #intro {
     width: 100%;
     position: relative;
-    background: url(../img/basemap2.gif) no-repeat;
+    background: url(../img/basemap-3.gif) no-repeat;
     background-position: 100% 100%;
     background-size: 100% auto;
     padding: 170px 0 120px 0;
@@ -592,7 +603,7 @@ h1, h2, h3, h4, h5, h6 {
   #intro {
     width: 100%;
     position: relative;
-    background: url(../img/basemap2.gif) no-repeat;
+    background: url(../img/basemap-3.gif) no-repeat;
     background-position: 100% 100%;
     background-size: 100% auto;
     padding: 170px 0 120px 0;
@@ -605,7 +616,7 @@ h1, h2, h3, h4, h5, h6 {
   #intro {
     width: 100%;
     position: relative;
-    background: url(../img/basemap2.gif) no-repeat;
+    background: url(../img/basemap-3.gif) no-repeat;
     background-position: 100% 100%;
     background-size: 100% auto;
     padding: 170px 0 120px 0;
@@ -648,7 +659,7 @@ h1, h2, h3, h4, h5, h6 {
   #intro .intro-info {
     width: 80%;
     float: none;
-    margin: auto;
+    margin: auto auto;
     text-align: center;
   }
 }
@@ -656,6 +667,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 767px) {
   #intro .intro-info {
     width: 100%;
+    margin: auto auto;
   }
 }
 
@@ -683,7 +695,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #intro .intro-info .btn-get-started, #intro .intro-info .btn-services {
-    background: #00428c;
+    background: #2375bc;
     font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -756,7 +768,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #about-1 {
   background: #fff;
-  padding: 60px 40px;
+  padding: 60px 40px 10px 40px;
   
 }
 
@@ -1580,7 +1592,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #footer .footer-top .footer-newsletter {
-  margin-bottom: 30px;
+  padding-top: 3%;
 }
 
 #footer .footer-top .footer-newsletter input[type="email"] {
