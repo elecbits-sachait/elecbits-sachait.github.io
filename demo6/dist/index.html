@@ -22,6 +22,14 @@
 		<!--begin::Layout Themes(used by all pages)-->
 		<!--end::Layout Themes-->
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet" />
+		<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+   		<style>
+      	.video-js {
+      		width: 100%!important;
+      		height: 100%!important;
+      	}
+   		</style>
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -64,7 +72,7 @@
 				
 						<!--end::Notifications-->
 						<!--begin::Quick Actions-->
-						<a href="#" class="btn btn-icon btn-hover-text-primary btn-lg mb-1" id="kt_quick_actions_toggle" data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window" title="Quick Actions">
+						<a href="#" class="btn btn-icon btn-hover-text-primary btn-lg mb-1" id="kt_quick_actions_toggle" data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window" title="History">
 							<span class="svg-icon svg-icon-xxl">
 								<!--begin::Svg Icon | path:assets/media/svg/icons/Media/Equalizer.svg-->
 								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -167,10 +175,10 @@
 										<div class="tab-content">
 											<!--begin::Table-->
 											<div class="table-responsive">
-												<table class="table table-head-custom table-head-bg table-borderless table-vertical-center">
+												<table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
 													<thead>
 														<tr class="text-left text-uppercase">
-															<th style="min-width: 130px" class="pl-7">
+															<th style="min-width: 130px">
 																<span class="text-dark-75">Time</span>
 															</th>
 															<th style="min-width: 300px">Details</th>
@@ -180,17 +188,22 @@
 													</thead>
 													<tbody>
 														<tr>
-															<td class="pl-0 py-8">
+															<td class="pr-0 text-left">
 																<div class="d-flex align-items-center">										
 																	<div>
-																		<a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Brad Simmons</a>
-																		<span class="text-muted font-weight-bold d-block">HTML, JS, ReactJS</span>
+																		<a class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">9:35</a>
+																		<span class="text-muted font-weight-bold d-block">12-7-2020</span>
 																	</div>
 																</div>
 															</td>
 															<td>
-																<span class="text-dark-75 font-weight-bolder d-block font-size-lg">$8,000,000</span>
-																<span class="text-muted font-weight-bold">In Proccess</span>
+																
+																<span class="text-dark-75 font-weight-bolder d-block font-size-lg">NAME - SAURAV</span>
+																<span class="text-muted font-weight-bold">MOBILE NUMBER - 8860394267</span>
+																<br>
+																<span class="text-muted font-weight-bold">STATUS - NOTESCALATED ( STOP )</span>
+																<br>
+																<span class="text-muted font-weight-bold">Notification-Id - 73c67391-cbd1-4e2b-8f97-12a93ef2c514</span>
 															</td>
 															
 															
@@ -198,15 +211,74 @@
 
 																<br>
 																
-																<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Live Video</button>
+																<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+																    Live Preview
+																</button>
+
 
 																<br> 
 																<br> 
+																<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">
+																    Live Location
+																</button>
+
+																<br> 
+																<br>
 
 
-														        <button type="button" class="btn btn-primary" class="nav-item mb-2" id="kt_demo_panel_toggle" data-toggle="tooltip" data-placement="right">
+														        <button type="button" class="btn btn-danger" class="nav-item mb-2" id="kt_demo_panel_toggle" data-toggle="tooltip" data-placement="right">
 																<a style="color: white;" href="#">
-																Live Location
+																Other Details
+																</a>
+																</button>
+
+																<br> 
+																<br>
+			
+															</td>
+														</tr>
+														<tr>
+															<td class="pr-0 text-left">
+																<div class="d-flex align-items-center">										
+																	<div>
+																		<a class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">9:35</a>
+																		<span class="text-muted font-weight-bold d-block">12-7-2020</span>
+																	</div>
+																</div>
+															</td>
+															<td>
+																
+																<span class="text-dark-75 font-weight-bolder d-block font-size-lg">NAME - SAURAV</span>
+																<span class="text-muted font-weight-bold">MOBILE NUMBER - 8860394267</span>
+																<br>
+																<span class="text-muted font-weight-bold">STATUS - NOTESCALATED ( STOP )</span>
+																<br>
+																<span class="text-muted font-weight-bold">Notification-Id - 73c67391-cbd1-4e2b-8f97-12a93ef2c514</span>
+															</td>
+															
+															
+															<td class="pr-0 text-left">
+
+																<br>
+																
+																<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+																    Live Preview
+																</button>
+
+
+																<br> 
+																<br> 
+																<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">
+																    Live Location
+																</button>
+
+																<br> 
+																<br>
+
+
+														        <button type="button" class="btn btn-danger" class="nav-item mb-2" id="kt_demo_panel_toggle" data-toggle="tooltip" data-placement="right">
+																<a style="color: white;" href="#">
+																Other Details
 																</a>
 																</button>
 			
@@ -235,21 +307,62 @@
 					<!--end::Footer-->
 				</div>
 				<!--end::Wrapper-->
+				<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+				    <div class="modal-dialog modal-lg" role="document">
+				        <div class="modal-content">
+				            <div class="modal-header">
+				                <h5 class="modal-title" id="exampleModalLabel1">Live Location</h5>
+				                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				                    <i aria-hidden="true" class="ki ki-close"></i>
+				                </button>
+				            </div>
+				            <div class="modal-body">
+							 <div class="col-lg-12" style="padding: 20px 0px 20px 20px;" >
+						      <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=28.5812022%2C77.168108&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://thevpndeal.com/nordvpn-coupon/">nordvpn coupon</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+						     
+
+						   </div>	               
+
+				            </div>
+				        </div>
+				    </div>
+				</div>
+
 				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    				<div class="modal-dialog" role="document">
-       					 <div class="modal-content">
-            					<div class="modal-header">
-                					<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
-                					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    				<i aria-hidden="true" class="ki ki-close"></i>
-                					</button>
-            					</div>
-            			<div class="modal-body">
-                ...
-            			</div>
-            			
-        				</div>
-    				</div>
+				    <div class="modal-dialog modal-lg" role="document">
+				        <div class="modal-content">
+				            <div class="modal-header">
+				                <h5 class="modal-title" id="exampleModalLabel">Live Preview</h5>
+				                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				                    <i aria-hidden="true" class="ki ki-close"></i>
+				                </button>
+				            </div>
+				            <div class="modal-body">
+							 <div class="col-lg-12" style="width: 800px; height: 500px; padding: 20px 20px 20px 20px;" >
+						      <video muted
+						      autoplay
+						      id="my-video"
+						      class="video-js"
+						      controls
+						      preload="auto"
+						      data-setup="{}"
+						      height="400" 
+						      >
+						      <source src="http://35.222.21.172:8008/hls/K6-2.m3u8" type="application/x-mpegURL" />
+						      <p class="vjs-no-js">
+						         To view this video please enable JavaScript, and consider upgrading to a
+						         web browser that
+						         <a href="https://videojs.com/html5-video-support/" target="_blank">
+						         supports HTML5 video</a>
+						      </p>
+						      </video>
+						      <script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
+
+						   </div>	               
+
+				            </div>
+				        </div>
+				    </div>
 				</div>
 
 
@@ -312,28 +425,28 @@
 					<!--begin::Aside Secondary Content-->
 					<div class="sidebar-content flex-column-fluid pb-10 pt-9 px-5 px-lg-10">
 						<!--begin: Stats Widget 19-->
-						<div class="card card-custom bg-light-success card-shadowless gutter-b">
+						<div class="card card-custom bg-light-primary card-shadowless gutter-b">
 							<!--begin::Body-->
 							<div class="card-body my-3">
-								<a href="#" class="card-title font-weight-bolder text-success text-hover-state-dark font-size-h6 mb-4 d-block">SAP UI Progress</a>
+								<a href="#" class="card-title font-weight-bolder text-primary text-hover-state-dark font-size-h6 mb-4 d-block">Open Notification</a>
 								<div class="font-weight-bold text-muted font-size-sm">
-								<span class="text-dark-75 font-size-h2 font-weight-bolder mr-2">67%</span>Average</div>
-								<div class="progress progress-xs mt-7 bg-success-o-60">
-									<div class="progress-bar bg-success" role="progressbar" style="width: 67%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								<span class="text-dark-75 font-size-h2 font-weight-bolder mr-2">67%</span></div>
+								<div class="progress progress-xs mt-7 bg-primary-o-60">
+									<div class="progress-bar bg-primary" role="progressbar" style="width: 67%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div>
 							<!--end:: Body-->
 						</div>
 						<!--end: Stats:Widget 19-->
 						<!--begin::Stats Widget 20-->
-						<div class="card card-custom bg-light-warning card-shadowless gutter-b">
+						<div class="card card-custom bg-light-danger card-shadowless gutter-b">
 							<!--begin::Body-->
 							<div class="card-body my-4">
-								<a href="#" class="card-title font-weight-bolder text-warning font-size-h6 mb-4 text-hover-state-dark d-block">Airplus Budget</a>
+								<a href="#" class="card-title font-weight-bolder text-danger font-size-h6 mb-4 text-hover-state-dark d-block">Escalatated Notification</a>
 								<div class="font-weight-bold text-muted font-size-sm">
-								<span class="text-dark-75 font-weight-bolder font-size-h2 mr-2">87K%</span>23k to goal</div>
-								<div class="progress progress-xs mt-7 bg-warning-o-60">
-									<div class="progress-bar bg-warning" role="progressbar" style="width: 87%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								<span class="text-dark-75 font-weight-bolder font-size-h2 mr-2">87K%</span></div>
+								<div class="progress progress-xs mt-7 bg-danger-o-60">
+									<div class="progress-bar bg-danger" role="progressbar" style="width: 87%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div>
 							<!--end::Body-->
@@ -1158,7 +1271,7 @@
 		<div id="kt_demo_panel" class="offcanvas offcanvas-right p-10">
 			<!--begin::Header-->
 			<div class="offcanvas-header d-flex align-items-center justify-content-between pb-7">
-				<h4 class="font-weight-bold m-0">Select A Demo</h4>
+				<h4 class="font-weight-bold m-0">Live Location</h4>
 				<a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_demo_panel_close">
 					<i class="ki ki-close icon-xs text-muted"></i>
 				</a>
@@ -1166,6 +1279,8 @@
 			<!--end::Header-->
 			<!--begin::Content-->
 			<div class="offcanvas-content">
+
+				
 				<!--begin::Wrapper-->
 				
 				<!--end::Wrapper-->
@@ -1193,6 +1308,7 @@
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="assets/js/pages/widgets.js"></script>
 		<!--end::Page Scripts-->
+		 
 	</body>
 	<!--end::Body-->
 </html>
