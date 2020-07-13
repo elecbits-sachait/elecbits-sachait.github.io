@@ -1191,6 +1191,9 @@
 				.catch(function (err) {
 					console.log('error: ' + err);
 				});
+				setTimeout(() => {
+                fun()
+            }, 5000); 
 			}
 			fun()
 					
