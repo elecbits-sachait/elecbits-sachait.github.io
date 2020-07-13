@@ -182,59 +182,13 @@
 															<th style="min-width: 130px">
 																<span class="text-dark-75">Time</span>
 															</th>
-															<th style="min-width: 300px">Details</th>
+															<th style="min-width: 250px">Details</th>
 															
-															<th style="min-width: 80px">Live Information</th>
+															<th style="min-width: 150px">Live Information</th>
 														</tr>
 													</thead>
-													<tbody>
-														<tr>
-															<td class="pr-0 text-left">
-																<div class="d-flex align-items-center">										
-																	<div>
-																		<a class="text-dark-75 font-weight-bolder d-block font-size-lg">9:35</a>
-																		<span class="text-dark-75 font-weight-bolder d-block font-size-lg">12-7-2020</span>
-																	</div>
-																</div>
-															</td>
-															<td>
-																<span class="text-muted font-weight-bold">Notification-Id - 73c67391-cbd1-4e2b-8f97-12a93ef2c514</span>
-																<br>
-
-																<span class="text-dark-75 font-weight-bolder d-block font-size-lg">NAME - SAURAV</span>
-
-																<span class="text-dark-75 font-weight-bolder d-block font-size-lg">MOBILE NUMBER - 8860394267</span>
-																																			
-																<span class="text-muted font-weight-bold">First Responders - Elecbits-9975612467,Xyz-8447973175</span>
-															</td>
-															
-															
-															<td class="pr-0 text-left">
-
-																<br>
-																<br>
-																
-																<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-																    Live Preview
-																</button>
-
-
-																<br> 
-																<br> 
-																<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">
-																    Live Location
-																</button>
-
-																<br> 
-																<br>
-
-
-														  
-																<br> 
-																<br>
-			
-															</td>
-														</tr>												
+													<tbody id="tableBody">
+																	
 													</tbody>
 												</table>
 											</div>
@@ -256,65 +210,8 @@
 					<!--end::Footer-->
 				</div>
 				<!--end::Wrapper-->
-				<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-				    <div class="modal-dialog modal-lg" role="document">
-				        <div class="modal-content">
-				            <div class="modal-header">
-				                <h5 class="modal-title" id="exampleModalLabel1">Live Location</h5>
-				                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				                    <i aria-hidden="true" class="ki ki-close"></i>
-				                </button>
-				            </div>
-				            <div class="modal-body">
-							 <div class="col-lg-12" style="padding: 20px 0px 20px 20px;" >
-						      <div class="mapouter"><div class="gmap_canvas"><iframe width="700" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=28.5812022%2C77.168108&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:500px;width:700px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:700px;}</style></div>
-						     
 
-						   </div>	               
-
-				            </div>
-				        </div>
-				    </div>
-				</div>
-
-				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				    <div class="modal-dialog modal-lg" role="document">
-				        <div class="modal-content">
-				            <div class="modal-header">
-				                <h5 class="modal-title" id="exampleModalLabel">Live Preview</h5>
-				                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				                    <i aria-hidden="true" class="ki ki-close"></i>
-				                </button>
-				            </div>
-				            <div class="modal-body">
-							 <div class="col-lg-12" style="width: 800px; height: 500px; padding: 20px 20px 20px 20px;" >
-						      <video muted
-						      autoplay
-						      id="my-video"
-						      class="video-js"
-						      controls
-						      preload="auto"
-						      data-setup="{}"
-						      height="400" 
-						      >
-						      <source src="http://35.222.21.172:8008/hls/K6-2.m3u8" type="application/x-mpegURL" />
-						      <p class="vjs-no-js">
-						         To view this video please enable JavaScript, and consider upgrading to a
-						         web browser that
-						         <a href="https://videojs.com/html5-video-support/" target="_blank">
-						         supports HTML5 video</a>
-						      </p>
-						      </video>
-						      <script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
-
-						   </div>	               
-
-				            </div>
-				        </div>
-				    </div>
-				</div>
-
-
+				
 				<!--begin::Aside Secondary-->
 				<div class="sidebar sidebar-left d-flex flex-row-auto flex-column" id="kt_sidebar">
 					<!--begin::Aside Secondary Header-->
@@ -1258,8 +1155,43 @@
 		<!--end::Page Vendors-->
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="assets/js/pages/widgets.js"></script>
+		
+
 		<!--end::Page Scripts-->
-		 
+		<script>
+			var i = 0
+			const fun = async() => {
+			fetch('https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification')
+				.then(function (response) {
+					return response.json();
+				})
+				.then(function (data) {
+                var mainContainer = document.getElementById("tableBody");
+            for (i ; i < data.length; i++) {
+				var str = ""
+				const date = new Date(data[i].escalationTimestamp*1000)
+				var div = document.createElement("tr");
+				var dataString = data[i].victimFirstResponderList.map((dat,length)=>{
+					if(length == 0){
+					str = str + dat[0]+'-'+dat[1]
+					}else{
+					str = str + ',' + dat[0]+'-'+dat[1]
+
+					}
+					return str
+				})
+                div.innerHTML = '<td class="pr-0 text-left"><div class="d-flex align-items-center"><div><a class="text-dark-75 font-weight-bolder d-block font-size-lg">'+date.getHours()+':'+date.getMinutes()+'</a><span class="text-dark-75 font-weight-bolder d-block font-size-lg">'+date.getDay()+'-'+date.getMonth()+'-'+date.getFullYear()+'</span></div></div></td><td><span class="text-muted font-weight-bold">Notification-Id - '+data[i].notificationId+'</span><br><span class="text-dark-75 font-weight-bolder d-block font-size-lg">NAME - '+data[i].victimName+'</span><span class="text-dark-75 font-weight-bolder d-block font-size-lg">MOBILE NUMBER - '+data[i].victimPhone+'</span><br><span class="text-dark-75 font-weight-bolder d-block font-size-lg">Escalated By - '+data[i].escalatedByName+'-'+data[i].escalatedByPhone+'</span><span class="text-muted font-weight-bold">First Responders - '+dataString.pop()+'</span></td><td class="pr-0 text-left"><br><br><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Live Preview</button><br> <br> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">Live Location</button><br> <br><br><br></td><div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalLabel1">Live Location</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><i aria-hidden="true" class="ki ki-close"></i></button></div><div class="modal-body"><div class="col-lg-12" style="padding: 20px 0px 20px 20px;" ><div class="mapouter"><div class="gmap_canvas"><iframe width="700" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q='+data[i].victimLocation[0]+'%2C'+data[i].victimLocation[1]+'&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:500px;width:700px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:700px;}</style></div></div></div></div></div></div><div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Live Preview</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><i aria-hidden="true" class="ki ki-close"></i></button></div><div class="modal-body"><div class="col-lg-12" style="width: 800px; height: 500px; padding: 20px 20px 20px 20px;" ><video muted autoplay id="my-video" class="video-js" controls preload="auto" data-setup="{}" height="400"><source src='+data[i].victimCamFeed+' type="application/x-mpegURL" /><p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video></div></div></div></div></div>'
+                mainContainer.append(div)
+            } 
+				})
+				.catch(function (err) {
+					console.log('error: ' + err);
+				});
+			}
+			fun()
+					
+		</script>
+		<script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
 	</body>
 	<!--end::Body-->
 </html>
