@@ -22,8 +22,8 @@
 		<!--begin::Layout Themes(used by all pages)-->
 		<!--end::Layout Themes-->
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
-		<link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet" />
-		<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+<!-- 		<link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet" />
+		<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    		<style>
       	.video-js {
@@ -314,7 +314,7 @@
 		
 		<!-- end::Notifications Panel-->
 		<!--begin::Quick Actions Panel-->
-\
+
 		<!--end::Quick Actions Panel-->
 		<!-- begin::User Panel-->
 		<div id="kt_quick_user" class="offcanvas offcanvas-left p-10">
@@ -1184,7 +1184,7 @@
 					return str
 				})
 				const month = date.getMonth()+1
-                div.innerHTML = '<td class="pr-0 text-left"><div class="d-flex align-items-center"><div><a class="text-dark-75 font-weight-bolder d-block font-size-lg">'+date.getHours()+':'+date.getMinutes()+'</a><span class="text-dark-75 font-weight-bolder d-block font-size-lg">'+date.getDate()+'-'+month+'-'+date.getFullYear()+'</span></div></div></td><td><span class="text-muted font-weight-bold">Notification-Id - '+data[i].notificationId+'</span><br><span class="text-dark-75 font-weight-bolder d-block font-size-lg">NAME - '+data[i].victimName+'</span><span class="text-dark-75 font-weight-bolder d-block font-size-lg">MOBILE NUMBER - '+data[i].victimPhone+'</span><br><span class="text-dark-75 font-weight-bolder d-block font-size-lg">Escalated By - '+data[i].escalatedByName+'-'+data[i].escalatedByPhone+'</span><span class="text-muted font-weight-bold">First Responders - '+dataString.pop()+'</span></td><td class="pr-0 text-left"><br><br><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1'+i+'">Live Preview</button><br> <br> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal'+i+'">Live Location</button><br> <br><br><br></td><div class="modal fade" id="exampleModal'+i+'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalLabel1">Live Location</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><i aria-hidden="true" class="ki ki-close"></i></button></div><div class="modal-body"><div class="col-lg-12" style="padding: 20px 0px 20px 20px;" ><div class="mapouter"><div class="gmap_canvas"><iframe width="700" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q='+data[i].victimLocation[0]+'%2C'+data[i].victimLocation[1]+'&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:500px;width:700px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:700px;}</style></div></div></div></div></div></div><div class="modal fade" id="exampleModal1'+i+'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-lg "  role="document"><div class="modal-content" style="width:1200px;height:700px;"><div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Live Preview</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><i aria-hidden="true" class="ki ki-close"></i></button></div><div class="modal-body"><div class="col-lg-12"  style="height:650px; padding-left: 75px;" ><iframe src="'+data[i].victimCamFeed+'" height="600" width="1000"></div></div></div></div></div>'
+                div.innerHTML = '<td class="pr-0 text-left"><div class="d-flex align-items-center"><div><a class="text-dark-75 font-weight-bolder d-block font-size-lg">'+date.getHours()+':'+date.getMinutes()+'</a><span class="text-dark-75 font-weight-bolder d-block font-size-lg">'+date.getDate()+'-'+month+'-'+date.getFullYear()+'</span></div></div></td><td><span class="text-muted font-weight-bold">Notification-Id - '+data[i].notificationId+'</span><br><span class="text-dark-75 font-weight-bolder d-block font-size-lg">NAME - '+data[i].victimName+'</span><span class="text-dark-75 font-weight-bolder d-block font-size-lg">MOBILE NUMBER - '+data[i].victimPhone+'</span><br><span class="text-dark-75 font-weight-bolder d-block font-size-lg">Escalated By - '+data[i].escalatedByName+'-'+data[i].escalatedByPhone+'</span><span class="text-muted font-weight-bold">First Responders - '+dataString.pop()+'</span></td><td class="pr-0 text-left"><br><br><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1'+i+'">Live Preview</button><br> <br> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal'+i+'">Live Location</button><br> <br><br><br></td><div class="modal fade" id="exampleModal'+i+'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalLabel1">Live Location</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><i aria-hidden="true" class="ki ki-close"></i></button></div><div class="modal-body"><div class="col-lg-12" style="padding: 20px 0px 20px 20px;" ><div class="mapouter"><div class="gmap_canvas"><iframe width="700" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q='+data[i].victimLocation[0]+'%2C'+data[i].victimLocation[1]+'&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:500px;width:700px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:700px;}</style></div></div></div></div></div></div><div class="modal fade" id="exampleModal1'+i+'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-lg "  role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Live Preview</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><i aria-hidden="true" class="ki ki-close"></i></button></div><div class="modal-body"><div class="col-lg-12"  style="height:650px; padding-left: 75px;" ><iframe src="'+data[i].victimCamFeed+'" height="100%" width="100%"></div></div></div></div></div>'
                 mainContainer.append(div)
             } 
 				})
@@ -1198,7 +1198,7 @@
 			fun()
 					
 		</script>
-   <script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
+   <!-- <script src="https://vjs.zencdn.net/7.5.5/video.js"></script> -->
 	</body>
 	<!--end::Body-->
 </html>
