@@ -4,7 +4,7 @@
    <head>
       <base href="">
       <meta charset="utf-8" />
-      <title>Elecbits App Dashboard</title>
+      <title>Sachait - Elecbits Dashboard</title>
       <meta name="description" content="Updates and statistics" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <!--begin::Fonts-->
@@ -20,9 +20,15 @@
       <!--end::Global Theme Styles-->
       <!--begin::Layout Themes(used by all pages)-->
       <!--end::Layout Themes-->
-      <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+      <link rel="shortcut icon" href="assets/media/logo2.png" />
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <style type="text/css">
+         .symbol.symbol-light-primary .symbol-label {
+          background-color: #ffffff;
+         color: #8950FC;
+         }
+      </style>
    </head>
    <!--end::Head-->
    <!--begin::Body-->
@@ -32,7 +38,7 @@
       <div id="kt_header_mobile" class="header-mobile header-mobile-fixed">
          <!--begin::Logo-->
          <a href="index.html">
-         <img alt="Logo" src="assets/media/logos/logo-letter-1.png" class="logo-default max-h-30px" />
+         <img alt="Logo" src="assets/media/logo2.png" class="logo-default max-h-30px" />
          </a>
          <!--end::Logo-->
          <!--begin::Toolbar-->
@@ -47,9 +53,9 @@
                <!--begin::Brand-->
                <div class="aside-brand d-flex flex-column align-items-center flex-column-auto pt-18 pb-10">
                   <!--begin::Logo-->
-                  <div class="btn p-0 symbol symbol-60 symbol-light-primary" id="kt_quick_user_toggle">
+                  <div class="btn p-0 symbol symbol-100 symbol-light-primary" id="kt_quick_user_toggle">
                      <div class="symbol-label">
-                        <img alt="Logo" src="assets/media/svg/avatars/001-boy.svg" class="h-75 align-self-end" />
+                        <img alt="Logo" src="assets/media/logo2.png" class="h-75 align-self-end" />
                      </div>
                   </div>
                   <!--end::Logo-->
@@ -141,7 +147,7 @@
                            <!--begin::Header-->
                            <div class="card-header border-0 py-5">
                               <h3 class="card-title align-items-start flex-column">
-                                 <span class="card-label font-weight-bolder text-dark">App Notifications</span>
+                                 <span class="card-label font-weight-bolder text-dark">Escalated Notifications</span>
                               </h3>
                            </div>
                            <!--end::Header-->
@@ -252,12 +258,12 @@
                   <div class="card card-custom bg-light-primary card-shadowless gutter-b">
                      <!--begin::Body-->
                      <div class="card-body my-3">
-                        <a href="#" class="card-title font-weight-bolder text-primary text-hover-state-dark font-size-h6 mb-4 d-block">Active Notification</a>
+                        <a href="#" class="card-title font-weight-bolder text-primary text-hover-state-dark font-size-h6 mb-4 d-block">Application Notification</a>
                         <div class="font-weight-bold text-muted font-size-sm">
-                           <span class="text-dark-75 font-size-h2 font-weight-bolder mr-2">67%</span>
+                           <span class="text-dark-75 font-size-h2 font-weight-bolder mr-2">Count1 (35%)</span>
                         </div>
                         <div class="progress progress-xs mt-7 bg-primary-o-60">
-                           <div class="progress-bar bg-primary" role="progressbar" style="width: 67%;" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+                           <div class="progress-bar bg-primary" role="progressbar" style="width: 5%;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                      </div>
                      <!--end:: Body-->
@@ -267,18 +273,20 @@
                   <div class="card card-custom bg-light-danger card-shadowless gutter-b">
                      <!--begin::Body-->
                      <div class="card-body my-4">
-                        <a href="#" class="card-title font-weight-bolder text-danger font-size-h6 mb-4 text-hover-state-dark d-block">Action Taken</a>
+                        <a href="#" class="card-title font-weight-bolder text-danger font-size-h6 mb-4 text-hover-state-dark d-block">Device Notification</a>
                         <div class="font-weight-bold text-muted font-size-sm">
-                           <span class="text-dark-75 font-weight-bolder font-size-h2 mr-2">87%</span>
+                           <span class="text-dark-75 font-weight-bolder font-size-h2 mr-2">Count2 (45%)</span>
                         </div>
                         <div class="progress progress-xs mt-7 bg-danger-o-60">
-                           <div class="progress-bar bg-danger" role="progressbar" style="width: 87%;" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
+                           <div class="progress-bar bg-danger" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                      </div>
                      <!--end::Body-->
                   </div>
                   <!--end::Stats Widget 20-->
+
                   <!--begin::List Widget 4-->
+                  
                   <!--end::List Widget 1-->
                </div>
                <!--end::Aside Secondary Content-->
@@ -292,13 +300,13 @@
       <!-- LIVE FEED MODAL -->
       <div class="modal fade" id="liveFeedModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog modal-xl"  role="document">
-            <div class="modal-content">
+            <div class="modal-content" style="text-align: center;">
                <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Live Preview</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i aria-hidden="true" class="ki ki-close"></i></button>
                </div>
                <div class="modal-body">
-                  <div class="col-lg-12"  style="height:450px; padding-left: 75px;" ><iframe style="border: none" src="{{liveFeedUrl}}" allowfullscreen height="100%" width="100%"></iframe>
+                  <div class="col-lg-12"  style="height:450px; " ><iframe style="border: none" src="{{liveFeedUrl}}" allowfullscreen height="100%" width="100%"></iframe>
                   </div>
                </div>
             </div>
