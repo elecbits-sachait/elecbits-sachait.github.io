@@ -258,12 +258,12 @@
                   <div class="card card-custom bg-light-primary card-shadowless gutter-b">
                      <!--begin::Body-->
                      <div class="card-body my-3">
-                        <a href="#" class="card-title font-weight-bolder text-primary text-hover-state-dark font-size-h6 mb-4 d-block">Application Notification</a>
+                        <a href="#" class="card-title font-weight-bolder text-primary text-hover-state-dark font-size-h6 mb-4 d-block">Mobile App Notifications</a>
                         <div class="font-weight-bold text-muted font-size-sm">
-                           <span class="text-dark-75 font-size-h2 font-weight-bolder mr-2">Count1 (35%)</span>
+                           <span class="text-dark-75 font-size-h2 font-weight-bolder mr-2">{{stats.applicationCount}}</span>
                         </div>
                         <div class="progress progress-xs mt-7 bg-primary-o-60">
-                           <div class="progress-bar bg-primary" role="progressbar" style="width: 5%;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                           <div class="progress-bar bg-primary" role="progressbar" style="width: 5%;" aria-valuenow="{{stats.applicationCount}}" aria-valuemin="0" aria-valuemax="{{stats.totalNotificationCount}}"></div>
                         </div>
                      </div>
                      <!--end:: Body-->
@@ -273,12 +273,12 @@
                   <div class="card card-custom bg-light-danger card-shadowless gutter-b">
                      <!--begin::Body-->
                      <div class="card-body my-4">
-                        <a href="#" class="card-title font-weight-bolder text-danger font-size-h6 mb-4 text-hover-state-dark d-block">Device Notification</a>
+                        <a href="#" class="card-title font-weight-bolder text-danger font-size-h6 mb-4 text-hover-state-dark d-block">Device Notifications</a>
                         <div class="font-weight-bold text-muted font-size-sm">
-                           <span class="text-dark-75 font-weight-bolder font-size-h2 mr-2">Count2 (45%)</span>
+                           <span class="text-dark-75 font-weight-bolder font-size-h2 mr-2">{{stats.deviceCount}}</span>
                         </div>
                         <div class="progress progress-xs mt-7 bg-danger-o-60">
-                           <div class="progress-bar bg-danger" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                           <div class="progress-bar bg-danger" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="{{stats.totalNotificationCount}}"></div>
                         </div>
                      </div>
                      <!--end::Body-->
@@ -357,13 +357,24 @@
         .then(function(response) {
           $scope.notifications = response.data;
         });		
+
+        $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification/stats")
+        .then(function(response) {
+          $scope.stats = response.data;
+        });    
         
         window.setInterval(function(){
       	  $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification")
       	  .then(function(response) {
       	    $scope.notifications = response.data;
       	    console.log(response.data);
-      	  });				  		
+      	  });	
+
+           $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification/stats")
+           .then(function(response) {
+             $scope.stats = response.data;
+             console.log(response.data);
+           }); 			  		
       	}, 5000);	
       
       	$scope.openLocationModal = function(notif) {
