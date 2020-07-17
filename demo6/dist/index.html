@@ -28,11 +28,15 @@
           background-color: #ffffff;
          color: #8950FC;
          }
+
+        /* .width50 {
+            width: 50%
+         }*/
       </style>
    </head>
    <!--end::Head-->
    <!--begin::Body-->
-   <body id="kt_body" class="header-fixed header-mobile-fixed sidebar-enabled page-loading" ng-app="myShoppingList" ng-controller="myCtrl">
+   <body id="kt_body" class="header-fixed header-mobile-fixed sidebar-enabled page-loading" ng-app="myApp" ng-controller="myCtrl">
       <!--begin::Main-->
       <!--begin::Header Mobile-->
       <div id="kt_header_mobile" class="header-mobile header-mobile-fixed">
@@ -173,10 +177,31 @@
                                                    <div><a class="text-dark-75 font-weight-bolder d-block font-size-lg">{{timestampToDate(notif.escalationTimestamp)}}</a></div>
                                                 </div>
                                              </td>
-                                             <td><span class="text-muted font-weight-bold">Notification Id - {{notif.notificationId}}</span><br><br><span class="text-dark-75 font-weight-bolder d-block font-size-lg">Name - {{notif.victimName}}</span><span class="text-dark-75 font-weight-bolder d-block font-size-lg">Mobile Number - {{notif.victimPhone}}</span><span class="text-dark-75 font-weight-bolder d-block font-size-lg">Escalated By {{notif.escalatedByName}} - {{notif.escalatedByPhone}}</span><br><div class="width50"><span class="text-muted font-weight-bold">First Responders - {{notif.victimFirstResponderList}}</span></div></td>
+
+                                             <td>
+                                                <span class="text-muted font-weight-bold">Notification Id - {{notif.notificationId}}</span>
+                                                <br><br>
+                                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">Name - {{notif.victimName}}</span>
+                                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">Mobile Number - {{notif.victimPhone}}</span>
+                                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">Escalated By {{notif.escalatedByName}} - {{notif.escalatedByPhone}}</span>
+                                                <br>
+                                                <div class="width50"><span class="text-muted font-weight-bold">First Responders - {{notif.victimFirstResponderList}}</span></div>
+                                             </td>
+
                                              <td class="pr-0 text-left"><br><br>
-                                                <button type="button" class="btn btn-primary"  ng-click="openLiveFeedModal(notif)" >Live Preview</button><br> <br> <button type="button" class="btn btn-success" ng-click="openLocationModal(notif)">Live Location</button>
-                                                <br> <br><br><br>
+                                                <a ng-if="notif.incidentSource == 'device' && sirenStatus == 'OFF'" class="btn btn-danger" ng-click="playSirenFunction(notif.notificationId, 'ON')">
+                                                   <i class="flaticon2-bell-alarm-symbol"></i> Play Siren
+                                                </a>
+                                                <a ng-if="notif.incidentSource == 'device' && sirenStatus == 'ON'" class="btn btn-danger" ng-click="playSirenFunction(notif.notificationId, 'OFF')">
+                                                   <i class="flaticon2-bell-alarm-symbol"></i> Stop Siren
+                                                </a> <br><br>
+                                                <a class="btn btn-primary"  ng-click="openLiveFeedModal(notif)" >
+                                                   <i class="flaticon-eye"></i>Live Preview
+                                                </a><br><br>
+                                                <a class="btn btn-success" ng-click="openLocationModal(notif)">
+                                                   <i class="flaticon2-pin-1"></i>Live Location
+                                                </a>
+                                                <br><br><br><br>
                                              </td>
                                           </tr>
                                        </tbody>
@@ -363,63 +388,7 @@
       <!--begin::Page Scripts(used by this page)-->
       <script src="assets/js/pages/widgets.js"></script>
    </body>
-   <script>
-      var app = angular.module("myShoppingList", []); 
-      app.controller("myCtrl", function($scope, $http, $sce) {
-
-        $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification")
-        .then(function(response) {
-          $scope.notifications = response.data;
-        });		
-
-        $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification/stats")
-        .then(function(response) {
-          $scope.stats = response.data;
-          $scope.devicePercent = (($scope.stats.deviceCount/$scope.stats.totalNotificationCount)*100).toFixed(1);
-          $scope.appPercent = (($scope.stats.applicationCount/$scope.stats.totalNotificationCount)*100).toFixed(1);
-        });
-        
-        window.setInterval(function(){
-      	  $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification")
-      	  .then(function(response) {
-      	    $scope.notifications = response.data;
-      	    console.log(response.data);
-      	  });	
-
-           $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification/stats")
-           .then(function(response) {
-             $scope.stats = response.data;
-           });
-          $scope.devicePercent = (($scope.stats.deviceCount/$scope.stats.totalNotificationCount)*100).toFixed(1);
-          $scope.appPercent = (($scope.stats.applicationCount/$scope.stats.totalNotificationCount)*100).toFixed(1);	  		
-      	}, 5000);	
-      
-      	$scope.openLocationModal = function(notif) {
-      		$scope.notificationData = notif;
-      		$scope.locationUrl = $sce.trustAsResourceUrl('https://maps.google.com/maps?q='+ notif.victimLocation[0] + ',' + notif.victimLocation[1] + '&t=&z=13&ie=UTF8&iwloc=&output=embed'); 
-      	   $('#locationModal').modal('show');
-      	}
-      
-      	$scope.openLiveFeedModal = function(notif) {
-      		$scope.notificationData = notif;
-      	   $('#liveFeedModal').modal('show');
-      	   $scope.liveFeedUrl = $sce.trustAsResourceUrl(notif.victimCamFeed);
-      	}
-      
-      	$scope.timestampToDate = function(UNIX_timestamp) {
-      		  var a = new Date(UNIX_timestamp * 1000);
-      		  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-      		  var year = a.getFullYear();
-      		  var month = months[a.getMonth()];
-      		  var date = a.getDate();
-      		  var hour = a.getHours();
-      		  var min = a.getMinutes();
-      		  var sec = a.getSeconds();
-      		  var time = hour + ':' + min + ':' + sec + ' ' + date + '/' + month + '/' + year;
-      		  return time;					
-      	}
-
-      });
-   </script>
+   <script src="js/aws-iot-sdk-browser-bundle.js"></script>
+   <script src="js/bundle.js"></script>
    <!--end::Body-->
 </html>
