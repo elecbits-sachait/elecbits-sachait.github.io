@@ -20,7 +20,7 @@ module.exports = awsConfiguration;
       var notificationAudio = new Audio('notification.mp3');
       var sirenAudio = new Audio('siren.mp3');
 
-      $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification")
+      $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification?actionStatus=noActionTaken")
           .then(function(response) {
               $scope.notifications = response.data;
           });
@@ -33,7 +33,7 @@ module.exports = awsConfiguration;
           });
 
       window.setInterval(function() {
-          $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification")
+          $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification?actionStatus=noActionTaken")
               .then(function(response) {
                   $scope.notifications = response.data;
                   console.log(response.data);
@@ -43,8 +43,8 @@ module.exports = awsConfiguration;
               .then(function(response) {
                   $scope.stats = response.data;
               });
-          $scope.devicePercent = (($scope.stats.deviceCount / $scope.stats.totalNotificationCount) * 100).toFixed(1);
-          $scope.appPercent = (($scope.stats.applicationCount / $scope.stats.totalNotificationCount) * 100).toFixed(1);
+          $scope.actionTakenPercent = (($scope.stats.actionTaken / $scope.stats.totalNotificationCount) * 100).toFixed(1);
+          $scope.noActionTakenPercent = (($scope.stats.noActionTaken / $scope.stats.totalNotificationCount) * 100).toFixed(1);
       }, 5000);
 
       $scope.openLocationModal = function(notif) {
@@ -57,6 +57,21 @@ module.exports = awsConfiguration;
           $scope.notificationData = notif;
           $('#liveFeedModal').modal('show');
           $scope.liveFeedUrl = $sce.trustAsResourceUrl(notif.victimCamFeed);
+      }
+
+      $scope.takeAction = function(notificationId, escalationTimestamp) {
+        $http({
+            method: "PUT",
+            url: 'https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/take-action',
+            data: JSON.stringify({"notificationId": notificationId, "escalationTimestamp": escalationTimestamp, "actionStatus": "actionTaken"}),
+            contentType: 'application/json'
+        }).then(function mySuccess(response) {
+            if(response.status == 204) {
+              alert('Action Taken against the Notification!');
+            }
+        }, function myError(response) {
+            alert('Error in taking action: ', response);
+        });          
       }
 
       $scope.timestampToDate = function(UNIX_timestamp) {
