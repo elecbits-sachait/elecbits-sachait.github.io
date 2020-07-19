@@ -20,7 +20,7 @@ module.exports = awsConfiguration;
       var notificationAudio = new Audio('notification.mp3');
       var sirenAudio = new Audio('siren.mp3');
 
-      $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification?actionStatus=noActionTaken")
+      $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification?actionStatus=noActionTaken&count=10")
           .then(function(response) {
               $scope.notifications = response.data;
           });
@@ -33,7 +33,7 @@ module.exports = awsConfiguration;
           });
 
       window.setInterval(function() {
-          $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification?actionStatus=noActionTaken")
+          $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification?actionStatus=noActionTaken&count=10")
               .then(function(response) {
                   $scope.notifications = response.data;
                   console.log(response.data);
@@ -48,7 +48,8 @@ module.exports = awsConfiguration;
       }, 5000);
 
       $scope.openLocationModal = function(notif) {
-          $scope.notificationData = notif;
+          $scope.locationData = notif.victimCompleteLocation;
+          $scope.imagesData = notif.victimNearbyImages;
           $scope.locationUrl = $sce.trustAsResourceUrl('https://maps.google.com/maps?q=' + notif.victimLocation[0] + ',' + notif.victimLocation[1] + '&t=&z=13&ie=UTF8&iwloc=&output=embed');
           $('#locationModal').modal('show');
       }
@@ -74,6 +75,21 @@ module.exports = awsConfiguration;
         });          
       }
 
+      $scope.requestHelp = function(notificationId) {
+        $http({
+            method: "POST",
+            url: 'https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/request-help',
+            data: JSON.stringify({"notificationId": notificationId}),
+            contentType: 'application/json'
+        }).then(function mySuccess(response) {
+            if(response.status == 201) {
+              alert('SMS triggered to first responders');
+            }
+        }, function myError(response) {
+            alert('Error in taking action: ', response);
+        });          
+      }
+
       $scope.timestampToDate = function(UNIX_timestamp) {
           var a = new Date(UNIX_timestamp * 1000);
           var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -87,8 +103,7 @@ module.exports = awsConfiguration;
           return time;
       }
 
-      $scope.playSirenFunction = function(notificationId, mode) {
-         var sirenId = 'siren_' + notificationId.split('-')[0];
+      $scope.playSirenFunction = function(sirenId, mode) {
 
          $scope.payload = {
              "state" : {
@@ -98,7 +113,9 @@ module.exports = awsConfiguration;
              }
           }
 
-         console.log(JSON.stringify($scope.payload));
+          var topic = '$aws/things/' + sirenId + '/shadow/update';
+
+         console.log('topic: ', topic, ' payload: ', JSON.stringify($scope.payload));
 
          if(mode == 'ON') {
            sirenAudio.play();
@@ -111,7 +128,7 @@ module.exports = awsConfiguration;
 
          $scope.sirenStatus = mode;
 
-         mqttClient.publish('$aws/things/' + sirenId + '/shadow/update',
+         mqttClient.publish(topic,
                              JSON.stringify($scope.payload));
       }
 
