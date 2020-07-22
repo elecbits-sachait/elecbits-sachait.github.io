@@ -8349,7 +8349,7 @@ button.bg-dark-75:focus {
 
 .pt-8,
 .py-8 {
-  padding-top: 2rem !important; }
+  padding-top: 0.5rem !important; }
 
 .pr-8,
 .px-8 {
@@ -8357,7 +8357,7 @@ button.bg-dark-75:focus {
 
 .pb-8,
 .py-8 {
-  padding-bottom: 2rem !important; }
+  padding-bottom: 0.5rem !important; }
 
 .pl-8,
 .px-8 {

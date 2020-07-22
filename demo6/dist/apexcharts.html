@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<!--
+Template Name: Metronic - Bootstrap 4 HTML, React, Angular 9 & VueJS Admin Dashboard Theme
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: https://1.envato.market/EA4JP
+Renew Support: https://1.envato.market/EA4JP
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<html lang="en">
+	<!--begin::Head-->
+	<head><base href="../../">
+		<meta charset="utf-8" />
+		<title>Sachait Elecbits Dashboard - Analytics</title>
+		<meta name="description" content="Apexcharts examples" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<!--begin::Fonts-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+		<!--end::Fonts-->
+		<!--begin::Global Theme Styles(used by all pages)-->
+		<link href="demo6/dist/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="demo6/dist/assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="demo6/dist/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<!--end::Global Theme Styles-->
+		<!--begin::Layout Themes(used by all pages)-->
+		<!--end::Layout Themes-->
+		<link rel="shortcut icon" href="demo6/dist/assets/media/logo2.png" />
+      <link rel="shortcut icon" href="demo6/dist/assets/media/logo2.png" />
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>		
+		<style>
+			         .symbol.symbol-light-primary .symbol-label {
+          background-color: #ffffff;
+         color: #8950FC;
+         }
+		</style>
+	</head>
+	<!--end::Head-->
+	<!--begin::Body-->
+	<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled sidebar-enabled page-loading" ng-app="myApp" ng-controller="myCtrl">
+		<!--begin::Main-->
+		<!--begin::Header Mobile-->
+		<div id="kt_header_mobile" class="header-mobile header-mobile-fixed">
+			<!--begin::Logo-->
+			<a href="index.html">
+				<img alt="Logo" src="demo6/dist/assets/media/logo2.png" class="logo-default max-h-30px" />
+			</a>
+			<!--end::Logo-->
+			<!--begin::Toolbar-->
+			<div class="d-flex align-items-center">
+				<button class="btn p-0 burger-icon burger-icon-left" id="kt_header_mobile_toggle">
+					<span></span>
+				</button>
+				<button class="btn btn-hover-text-primary p-0 ml-5" id="kt_sidebar_mobile_toggle">
+					<span class="svg-icon svg-icon-xl">
+						<!--begin::Svg Icon | path:assets/media/svg/icons/Design/Substract.svg-->
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+								<rect x="0" y="0" width="24" height="24" />
+								<path d="M6,9 L6,15 C6,16.6568542 7.34314575,18 9,18 L15,18 L15,18.8181818 C15,20.2324881 14.2324881,21 12.8181818,21 L5.18181818,21 C3.76751186,21 3,20.2324881 3,18.8181818 L3,11.1818182 C3,9.76751186 3.76751186,9 5.18181818,9 L6,9 Z" fill="#000000" fill-rule="nonzero" />
+								<path d="M10.1818182,4 L17.8181818,4 C19.2324881,4 20,4.76751186 20,6.18181818 L20,13.8181818 C20,15.2324881 19.2324881,16 17.8181818,16 L10.1818182,16 C8.76751186,16 8,15.2324881 8,13.8181818 L8,6.18181818 C8,4.76751186 8.76751186,4 10.1818182,4 Z" fill="#000000" opacity="0.3" />
+							</g>
+						</svg>
+						<!--end::Svg Icon-->
+					</span>
+				</button>
+				<button class="btn btn-hover-text-primary p-0 ml-2" id="kt_aside_mobile_toggle">
+					<span class="svg-icon svg-icon-xl">
+						<!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg-->
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+								<polygon points="0 0 24 0 24 24 0 24" />
+								<path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+								<path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero" />
+							</g>
+						</svg>
+						<!--end::Svg Icon-->
+					</span>
+				</button>
+			</div>
+			<!--end::Toolbar-->
+		</div>
+		<!--end::Header Mobile-->
+		<div class="d-flex flex-column flex-root">
+			<!--begin::Page-->
+			<div class="d-flex flex-row flex-column-fluid page">
+				<!--begin::Aside-->
+				<div class="aside aside-left d-flex flex-column" id="kt_aside">
+					<!--begin::Brand-->
+					<div class="aside-brand d-flex flex-column align-items-center flex-column-auto pb-10">
+                  <!--begin::Logo-->
+                  <div class="btn p-0 symbol symbol-100" id="kt_quick_user_toggle">
+                     <div class="symbol-label" style="background-color: transparent!important;">
+                        <img alt="Logo" src="demo6/dist/assets/media/logo2.png" class="h-75 align-self-end" />
+                     </div>
+                  </div>
+                  <!--end::Logo-->
+					</div>
+					<!--end::Brand-->
+					<!--begin::Nav Wrapper-->
+					<div class="aside-nav d-flex flex-column align-items-center flex-column-fluid pb-10">
+						<!--begin::Nav-->
+						<!-- <ul class="nav flex-column">
+							<li class="nav-item mb-2" data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window" title="Finance &amp; Accounting">
+								<a href="#" class="nav-link btn btn-icon btn-hover-text-primary btn-lg" data-toggle="tab" data-target="#kt_aside_tab_6" role="tab">
+									<span class="svg-icon svg-icon-xxl">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+												<polygon points="0 0 24 0 24 24 0 24" />
+												<path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+												<path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" fill="#000000" />
+											</g>
+										</svg>
+									</span>
+								</a>
+							</li>
+						</ul> -->
+						<!--end::Nav-->
+					</div>
+					<!--end::Nav Wrapper-->
+				</div>
+				<!--end::Aside-->
+				<!--begin::Wrapper-->
+				<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+					<!--begin::Content-->
+					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+						<!--begin::Subheader-->
+						<div class="subheader py-2 py-lg-4 subheader-transparent" id="kt_subheader">
+							<div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+								<!--begin::Info-->
+								<div class="d-flex align-items-center flex-wrap mr-1">
+									<!--begin::Page Heading-->
+									<div class="d-flex align-items-baseline mr-5">
+										<!--begin::Page Title-->
+										<h3 class="text-dark font-weight-bold my-2 mr-5">Sachait Elecbits Dashboard Analytics</h3>
+										<!--end::Page Title-->
+									</div>
+									<!--end::Page Heading-->
+								</div>
+								<!--end::Info-->
+							</div>
+						</div>
+						<!--end::Subheader-->
+						<!--begin::Entry-->
+						<div class="d-flex flex-column-fluid">
+							<!--begin::Container-->
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-lg-6">
+										<!--begin::Card-->
+										<div class="card card-custom gutter-b">
+											<!--begin::Header-->
+											<div class="card-header h-auto">
+												<!--begin::Title-->
+												<div class="card-title py-5">
+													<h3 class="card-label">Notifications Breakdown</h3>
+												</div>
+												<!--end::Title-->
+											</div>
+											<!--end::Header-->
+											<div class="card-body">
+												<!--begin::Chart-->
+												<div id="chart_1">
+													<canvas id="pie" class="chart chart-pie"
+  chart-data="data" chart-labels="labels" chart-options="options">
+</canvas> 
+													</canvas>											
+												</div>
+												<!--end::Chart-->
+											</div>
+										</div>
+										<!--end::Card-->
+									</div>
+									<div class="col-lg-6">
+										<!--begin::Card-->
+										<div class="card card-custom gutter-b">
+											<div class="card-header">
+												<div class="card-title">
+													<h3 class="card-label">Daywise Notifications Breakdown (Past 7 days)</h3>
+												</div>
+											</div>
+											<div class="card-body">
+												<!--begin::Chart-->
+												<div id="chart_2">
+													<canvas id="base" class="chart-bar"
+  chart-data="dateChartData" chart-labels="dateChartLabels" chart-colors="colors"
+  chart-dataset-override="datasetOverride" >
+</canvas> 
+												</div>
+												<!--end::Chart-->
+											</div>
+										</div>
+										<!--end::Card-->
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-6">
+										<!--begin::Card-->
+										<div class="card card-custom gutter-b">
+											<div class="card-header">
+												<div class="card-title">
+													<h3 class="card-label">Types of Offences</h3>
+												</div>
+											</div>
+											<div class="card-body">
+												<!--begin::Chart-->
+												<div id="chart_3">
+													<canvas id="pie" class="chart chart-pie"
+  chart-data="offencesPieData" chart-labels="offencesPieLabels" chart-options="offencesOptions">
+</canvas> 
+												</div>
+												<!--end::Chart-->
+											</div>
+										</div>
+										<!--end::Card-->
+									</div>
+								</div>
+							</div>
+							<!--end::Container-->
+						</div>
+						<!--end::Entry-->
+					</div>
+					<!--end::Content-->
+				</div>
+				<!--end::Wrapper-->
+			</div>
+			<!--end::Page-->
+		</div>
+		<!--end::Main-->
+		<script>var HOST_URL = "https://keenthemes.com/metronic/tools/preview";</script>
+		<!--begin::Global Config(global config for global JS scripts)-->
+		<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1200 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#8950FC", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#F3F6F9", "dark": "#212121" }, "light": { "white": "#ffffff", "primary": "#E1E9FF", "secondary": "#ECF0F3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#212121", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#ECF0F3", "gray-300": "#E5EAEE", "gray-400": "#D6D6E0", "gray-500": "#B5B5C3", "gray-600": "#80808F", "gray-700": "#464E5F", "gray-800": "#1B283F", "gray-900": "#212121" } }, "font-family": "Poppins" };</script>
+		<!--end::Global Config-->
+		<!--begin::Global Theme Bundle(used by all pages)-->
+		<script  type="text/javascript" src="demo6/dist/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="demo6/dist/assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
+		<script src="demo6/dist/assets/js/scripts.bundle.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.js"></script>
+		<script type="text/javascript" src="demo6/dist/js/angular-charts.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script> -->
+		<!--end::Global Theme Bundle-->
+		<!--begin::Page Scripts(used by this page)-->
+		<!-- <script src="demo6/dist/assets/js/pages/features/charts/apexcharts.js"></script> -->
+		<!--end::Page Scripts-->
+		<script>
+	  var app = angular.module("myApp", ['chart.js']);
+	  app.controller("myCtrl", function($scope, $http, $sce) {
+		$scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
+
+		    $scope.dateChartLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+		    $scope.dateChartData = [
+		      [12, 10, 33, 44, 21, 9, 37],
+		      [9, 3, 13, 34, 20, 9, 30]
+		    ];
+		    $scope.datasetOverride = [
+		      {
+		        label: "Total Notifications",
+		        borderWidth: 1,
+		        type: 'bar'
+		      },
+		      {
+		        label: "Action Taken Notifications",
+		        borderWidth: 3,
+		        hoverBackgroundColor: "rgba(255,99,132,0.4)",
+		        hoverBorderColor: "rgba(255,99,132,1)",
+		        type: 'line'
+		      }
+		    ];
+
+		    $scope.offencesPieData = [3,8,11,1,15,33];
+		    $scope.offencesPieLabels = ["Attempt to Murder", "Assault", "Burglary", "Extortion", "Domestic Violence", "Others"];
+		    $scope.offencesOptions = {'legend': {'display': true, 'position': 'bottom'}};
+	      $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification?actionStatus=noActionTaken&count=50")
+	          .then(function(response) {
+	              $scope.noActionTakenNotifications = response.data;
+	          });
+
+         $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification?actionStatus=actionTaken&count=50")
+             .then(function(response) {
+                 $scope.actionTakenNotifications = response.data;
+             });
+
+
+	      $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification/stats")
+	          .then(function(response) {
+	              $scope.stats = response.data;
+	               $scope.data = [$scope.stats.actionTaken, $scope.stats.noActionTaken];
+	               $scope.options = {'legend': {'display': true, 'position': 'bottom'}};
+	              $scope.devicePercent = (($scope.stats.deviceCount / $scope.stats.totalNotificationCount) * 100).toFixed(1);
+	              $scope.appPercent = (($scope.stats.applicationCount / $scope.stats.totalNotificationCount) * 100).toFixed(1);
+	          });
+
+
+  $scope.labels = ["Action Taken", "No Action Taken"];
+  // $scope.data = [$scope.stats.actionTaken, $scope.stats.noActionTaken];
+	      $scope.sirenStatus = 'OFF';
+	      $scope.listToShow == 'actionTakenNotifs'
+
+	      var notificationAudio = new Audio('notification.mp3');
+	      var sirenAudio = new Audio('siren.mp3');
+
+
+	      window.setInterval(function() {
+            $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification?actionStatus=noActionTaken&count=50")
+                .then(function(response) {
+                    $scope.noActionTakenNotifications = response.data;
+                });
+
+            $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification?actionStatus=actionTaken&count=50")
+                .then(function(response) {
+                    $scope.actionTakenNotifications = response.data;
+                });
+
+	          $http.get("https://sgddji95n8.execute-api.ap-south-1.amazonaws.com/prod/policenotification/stats")
+	              .then(function(response) {
+	                  $scope.stats = response.data;
+	                  $scope.data = [$scope.stats.actionTaken, $scope.stats.noActionTaken];
+	              });
+	          $scope.actionTakenPercent = (($scope.stats.actionTaken / $scope.stats.totalNotificationCount) * 100).toFixed(1);
+	          $scope.noActionTakenPercent = (($scope.stats.noActionTaken / $scope.stats.totalNotificationCount) * 100).toFixed(1);
+	      }, 5000);
+
+	  });
+	</script>
+	</body>
+	<!--end::Body-->
+</html>
