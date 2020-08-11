@@ -111,10 +111,7 @@
     cursor: pointer;
 
 }
-.active, .dot:hover {
-    border:  1px solid #2578BE;
-    background-color: #2578be;
-  }
+
 
 .cont
 {
