@@ -31,14 +31,25 @@
   {
       background-color: #00428a;
       background-size: cover;
-      height: 200px;
+      min-height: 200px;
       padding-top: 30px;
+      padding-bottom: 30px;
   }
   .sensitive
   {
       color: white;
       font-size: 20px;
       padding-right: 150px;
+      vertical-align: middle;
+  }
+  @media(max-width:650px)
+  {
+    .sensitive
+    {
+        color: white;
+        font-size: 20px;
+        padding-right: 30px;
+    }
   }
   .s2-small
   {
@@ -49,7 +60,7 @@
   {
       width: 100%;
       height: auto;
-      border: 1px solid grey;
+      border: none;
   }
 @media (min-width: 768px)
 {
@@ -81,8 +92,29 @@
 }
 .grid-img
 {
-    width: 80%;
-    height: 200px;
+    width: 100%;
+    height: auto;
     margin-bottom: 30px;
-    border-radius: 10px;
+    
+}
+.grid-img-sq
+{
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    
+}
+.surakshit
+{
+    color: #2375bc;
+    font-size: 36px;
+    text-align: center;
+    font-weight: 500;
+}
+@media(min-width:992px)
+{
+    .trans
+    {
+        transform: translate(40px);
+    }
 }
