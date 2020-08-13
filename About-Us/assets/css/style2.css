@@ -118,3 +118,10 @@
         transform: translate(40px);
     }
 }
+@media(min-width:1166px)
+{
+    .trans
+    {
+        transform: translate(130px);
+    }
+}
