@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M0 0h24v24H0V0z" fill="none"/><circle cx="15.5" cy="9.5" r="1.5"/><circle cx="8.5" cy="9.5" r="1.5"/><circle cx="15.5" cy="9.5" r="1.5"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-2.5c2.33 0 4.32-1.45 5.12-3.5h-1.67c-.69 1.19-1.97 2-3.45 2s-2.75-.81-3.45-2H6.88c.8 2.05 2.79 3.5 5.12 3.5z"/></svg>
+<svg id="sentiment_satisfied_alt-24px" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+  <path id="Path_610" data-name="Path 610" d="M0,0H12V12H0Z" fill="none"/>
+  <path id="Path_611" data-name="Path 611" d="M0,0H12V12H0Z" fill="none"/>
+  <circle id="Ellipse_111" data-name="Ellipse 111" cx="1" cy="1" r="1" transform="translate(3 4)" fill="#044683"/>
+  <circle id="Ellipse_112" data-name="Ellipse 112" cx="1" cy="1" r="1" transform="translate(7 4)" fill="#044683"/>
+  <path id="Path_612" data-name="Path 612" d="M6.995,2a5,5,0,1,0,5,5A5,5,0,0,0,6.995,2ZM7,11a4,4,0,1,1,4-4A4,4,0,0,1,7,11ZM7,9.75A2.748,2.748,0,0,0,9.56,8H8.725a1.988,1.988,0,0,1-3.45,0H4.44A2.748,2.748,0,0,0,7,9.75Z" transform="translate(-1 -1)" fill="#044683"/>
+</svg>
