@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="102.519" height="98" viewBox="0 0 102.519 98">
+  <g id="Group_779" data-name="Group 779" transform="translate(-1446 -1403.583)">
+    <g id="report_problem-24px" transform="translate(1478 1430.438)">
+      <path id="Path_667" data-name="Path 667" d="M0,0H33.125V33.125H0Z" fill="none"/>
+      <path id="Path_668" data-name="Path 668" d="M1,28.224H31.365L16.182,2Zm16.563-4.141H14.8v-2.76h2.76Zm0-5.521H14.8V13.042h2.76Z" transform="translate(0.38 0.76)" fill="#044683"/>
+    </g>
+    <g id="phone_iphone-24px" transform="translate(1446 1403.583)">
+      <path id="Path_669" data-name="Path 669" d="M0,0H102.519V98H0Z" fill="none"/>
+      <path id="Path_670" data-name="Path 670" d="M48.24,1H15.3A10.252,10.252,0,0,0,5,11.2V80.563a10.252,10.252,0,0,0,10.3,10.2H48.24a10.252,10.252,0,0,0,10.3-10.2V11.2A10.252,10.252,0,0,0,48.24,1ZM31.768,86.684a6.121,6.121,0,1,1,6.177-6.12A6.141,6.141,0,0,1,31.768,86.684ZM50.3,70.363H13.236V13.241H50.3Z" transform="translate(17 3.118)" fill="#044683"/>
+    </g>
+  </g>
+</svg>

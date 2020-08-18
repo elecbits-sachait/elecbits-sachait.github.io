@@ -174,10 +174,12 @@
 {
     font-family: ubuntu;
     font-weight: 700;
-    font-size: 45px;
+    font-size: 35px;
     color: #3B3B3B;
     text-align: center;
     line-height: 60px;
+    max-width:1000px;
+    margin: auto;
 }
 
 .india-f-txt
@@ -187,7 +189,7 @@
     font-weight: 300;
     color: #707070;
     text-align: center;
-    width: 70%;
+    width: 300px;
     margin: 0 auto 50px auto;
     
     margin-top: 30px;
@@ -265,4 +267,15 @@
 {
     width: 45px;
     height: auto;
+}
+
+.sub-hd
+{
+    color: #383838;
+    font-size: 35px;
+}
+@media(max-width:450px)
+{
+    .sub-hd{font-size: 25px;}
+    .india-f{font-size: 25px;line-height: 40px;}
 }
