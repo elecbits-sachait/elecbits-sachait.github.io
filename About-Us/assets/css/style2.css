@@ -31,7 +31,7 @@
   {
       background-color: #00428a;
       background-size: cover;
-      min-height: 200px;
+    
       padding-top: 30px;
       padding-bottom: 30px;
   }
@@ -39,22 +39,14 @@
   {
       color: white;
       font-size: 20px;
-      padding-right: 150px;
-      vertical-align: middle;
+      width: 80%;
+      margin: auto;
   }
-  @media(max-width:650px)
-  {
-    .sensitive
-    {
-        color: white;
-        font-size: 20px;
-        padding-right: 30px;
-    }
-  }
+  
   .s2-small
   {
       text-align: center;
-      margin-bottom: 70px;
+      margin-bottom: 30px;
   }
   .prof-img
   {
@@ -123,5 +115,33 @@
     .trans
     {
         transform: translate(130px);
+    }
+}
+.video-holder
+{
+  margin: 0 auto 0 auto;
+  width: 60%;
+  height: auto;
+  border-radius: 10px;
+}
+.blue-box
+{
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 850px;
+    justify-content: space-around;
+}
+@media(max-width:576px)
+{
+    .text-al
+    {
+        text-align: center;
+    }
+}
+@media(min-width:577px)
+{
+    .text-al
+    {
+        text-align: left;
     }
 }

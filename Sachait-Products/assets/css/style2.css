@@ -52,10 +52,14 @@
 {
     font-family: ubuntu;
     font-weight: 500;
-    font-size: 45px;
+    font-size: 38px;
     color: #044683;
     line-height: 60px;
     margin-bottom: 20px;
+}
+@media(min-width:992px)
+{
+    .section-header{text-align: left;margin-left: 5%;}
 }
 
 .icon-out
@@ -117,14 +121,14 @@
 }
 .icon-block {
     width: 100%;
-    display: flex;
+    /* display: flex; */
     flex-wrap: nowrap;
     justify-content: center;
     margin: 15px 0px;
   }
   .icon-img-desc {
-    width: 85%;
-    text-align: justify;
+    width: auto;
+    text-align: center;
   }
   .indent-img-left
 {
@@ -141,6 +145,9 @@
     width: 100vw;
 
 }
+.icon-img {
+    margin-right: 0;
+  }
 }
 @media(max-width:680px)
 {
@@ -218,22 +225,30 @@
 
 }
 
-.icon-block {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    margin: 15px 0px;
-  }
+@media(min-width:992px)
+{
+    .icon-block {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        margin: 15px 0px;
+      }
 
-.icon-img {
-    margin-right: 30px;
-  }
+      .icon-img-desc {
+        width:85%;
+        text-align: justify;
+      }
+}
 
-.icon-img-desc {
-    width: 85%;
-    text-align: justify;
-  }
+@media(min-width:992px)
+{
+    .icon-img {
+        margin-right: 30px;
+      }
+}
+
+
 
 .arrow
   {
@@ -279,3 +294,4 @@
     .sub-hd{font-size: 25px;}
     .india-f{font-size: 25px;line-height: 40px;}
 }
+div>b{font-weight: 500;color: #242321;}

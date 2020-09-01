@@ -1,3 +1,22 @@
+.l-more
+{
+  background: #2375bc;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 14px 40px;
+    border-radius: 8px;
+    transition: 0.5s;
+    margin: 0 20px 20px 0;
+    color: #fff;
+}
+.l-more:hover
+{
+  background-color: #00428a;
+  color: white;
+}
 .img-logo
 {
   height: 20%;
