@@ -217,11 +217,33 @@
     margin-top: 30px;
 }
 }
-
-.phone
+@media(min-width:992px)
+{
+    .phone
 {
     margin-bottom: -20px;
     width: 30%;
+
+}
+
+}
+@media(max-width:991px)
+{
+    .phone
+{
+    margin-bottom: -120px;
+    width: 60%;
+
+}
+}
+@media(max-width:400px)
+{
+    .phone
+{
+    margin-bottom: -120px;
+    width: 90%;
+
+}
 
 }
 
